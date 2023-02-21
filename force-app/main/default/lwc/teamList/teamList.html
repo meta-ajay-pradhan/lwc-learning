@@ -1,8 +1,16 @@
 <template>
     <lightning-card title="Team List">
+        <lightning-combobox
+            name="teams"
+            label="Select Team"
+            value={currentTeam}
+            placeholder="Select Team"
+            options = {options}
+            onchange={handleTeamChange}>
+        </lightning-combobox>
         <lightning-datatable
             key-field="id"
-            data={_members}
+            data={displayMembers}
             columns={columns}>
         </lightning-datatable>
     </lightning-card>
